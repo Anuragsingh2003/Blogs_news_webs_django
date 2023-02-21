@@ -62,14 +62,13 @@ def blog_delete(request, blog_id):
         blog.delete()
     return redirect('blog_list')
 
-
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password1')
+            user=form.save()
             user = authenticate(request, email=email, password=password)
             login(request, user)
             messages.success(request, f'Account created for {email}!')
@@ -77,7 +76,6 @@ def register(request):
     else:
         form = RegistrationForm()
     return render(request, 'register.html', {'form': form})
-
 
 from .forms import LoginForm
 
