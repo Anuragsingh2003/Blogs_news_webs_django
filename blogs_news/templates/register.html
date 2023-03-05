@@ -4,10 +4,15 @@
       <title>{% block title %}My Web App{% endblock %}</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
       
-      
-      <link rel="stylesheet" type="text/css" href="static/css/style.css" >
+      <style>
+        .body-bg {
+      background-image: url('../static/mypics/DSA.jpg');
+      background-repeat: no-repeat;
+      background-size: 100vw 100vh;}
+</style>
+
     </head>
-    <body>
+    <body class= "body-bg">
     
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">My Web App</a>
